@@ -41,25 +41,18 @@ class ViewController: UIViewController {
 final class GetNameEndpoint: ObjectResponseEndpoint<String> {
     
     override var method: RESTClient.RequestType { return .get }
-    override var path: String { "/v1/cards" }
-//    override var queryItems: [URLQueryItem(name: "id", value: "1")]?
+    override var path: String { "/v1/public/characters/1010743/series" }
     
     override init() {
         super.init()
 
-        queryItems = [URLQueryItem(name: "name", value: "Black Lotus")]
+        queryItems = [URLQueryItem(name: "ts",value: "1"),
+                      URLQueryItem(name: "apikey",value: "96732abd690b89d71a8daeccb564a4be"),
+                      URLQueryItem(name: "hash",value: "debf0b805f2e5c9766ec3467673189ee"),
+        ]
     }
     
 }
-
-
-
-
-
-
-
-
-
 
 
 func decodeJSONOld() {
@@ -79,4 +72,3 @@ func decodeJSONOld() {
         print("Failed to load: \(error.localizedDescription)")
     }
 }
-

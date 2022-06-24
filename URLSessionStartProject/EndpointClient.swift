@@ -28,7 +28,7 @@ public final class EndpointClient {
     // MARK: - Private Properties
 
     private let applicationSettings: ApplicationSettingsService
-    private var masterServerURL: String { "https://api.magicthegathering.io" }
+    private var masterServerURL: String { "https://gateway.marvel.com" }
 //    private var masterServerURL: String { "http://localhost:5055" }
 
     // MARK: - Initialization

@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import CryptoKit
 
 class ViewController: UIViewController {
-
+    
     private let endpointClient = EndpointClient(applicationSettings: ApplicationSettingsService())
 
     override func viewDidLoad() {
@@ -40,26 +41,23 @@ class ViewController: UIViewController {
 
 final class GetNameEndpoint: ObjectResponseEndpoint<String> {
     
+    let publicKey = "96732abd690b89d71a8daeccb564a4be"
+    let privateKey = "6713c39a1931bb5bfef0fe63be2eb22bb3aa096a"
+    let tsValue = "1"
+    
     override var method: RESTClient.RequestType { return .get }
-    override var path: String { "/v1/cards" }
-//    override var queryItems: [URLQueryItem(name: "id", value: "1")]?
+    override var path: String { "/v1/public/characters/1010743/series" }
     
     override init() {
         super.init()
+        
 
-        queryItems = [URLQueryItem(name: "name", value: "Black Lotus")]
+        queryItems = [URLQueryItem(name: "ts",value: tsValue),
+                      URLQueryItem(name: "apikey",value: publicKey),
+                      URLQueryItem(name: "hash",value: (tsValue + privateKey + publicKey).md5),
+        ]
     }
-    
 }
-
-
-
-
-
-
-
-
-
 
 
 func decodeJSONOld() {
@@ -79,4 +77,13 @@ func decodeJSONOld() {
         print("Failed to load: \(error.localizedDescription)")
     }
 }
+
+extension String {
+    var md5: String? {
+        guard let data = self.data(using: .utf8) else { return nil }
+        let computed = Insecure.MD5.hash(data: data)
+        return computed.map { String(format: "%02x", $0) }.joined()
+    }
+}
+
 

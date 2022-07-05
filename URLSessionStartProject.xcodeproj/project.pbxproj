@@ -70,22 +70,54 @@
 		8F7518E427549D62001F05F2 /* URLSessionStartProject */ = {
 			isa = PBXGroup;
 			children = (
-				8F7518E527549D62001F05F2 /* AppDelegate.swift */,
-				8F7518E727549D62001F05F2 /* SceneDelegate.swift */,
-				8F7518E927549D62001F05F2 /* ViewController.swift */,
-				8FE4B91F2754A0A8005B617D /* EndpointClient.swift */,
+				9D68CDB228749B53004A4D46 /* App */,
+				9D68CDB328749B67004A4D46 /* View */,
+				9D68CDB528749BAF004A4D46 /* Model */,
+				9D68CDB428749B88004A4D46 /* NetworkService */,
 				8F7518EB27549D62001F05F2 /* Main.storyboard */,
-				8FE4B9192754A009005B617D /* AppSettings.swift */,
-				8FE4B91B2754A059005B617D /* Endpoint.swift */,
-				8FE4B91D2754A080005B617D /* RESTClient.swift */,
-				8FE4B9212754A0EF005B617D /* EndpointClientError.swift */,
-				8FE4B9232754A118005B617D /* ServerError.swift */,
-				8FE4B91727549FD1005B617D /* Model.swift */,
 				8F7518EE27549D65001F05F2 /* Assets.xcassets */,
 				8F7518F027549D65001F05F2 /* LaunchScreen.storyboard */,
 				8F7518F327549D65001F05F2 /* Info.plist */,
 			);
 			path = URLSessionStartProject;
+			sourceTree = "<group>";
+		};
+		9D68CDB228749B53004A4D46 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8F7518E727549D62001F05F2 /* SceneDelegate.swift */,
+				8F7518E527549D62001F05F2 /* AppDelegate.swift */,
+				8FE4B9192754A009005B617D /* AppSettings.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9D68CDB328749B67004A4D46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8F7518E927549D62001F05F2 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9D68CDB428749B88004A4D46 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				8FE4B91D2754A080005B617D /* RESTClient.swift */,
+				8FE4B91B2754A059005B617D /* Endpoint.swift */,
+				8FE4B91F2754A0A8005B617D /* EndpointClient.swift */,
+				8FE4B9212754A0EF005B617D /* EndpointClientError.swift */,
+				8FE4B9232754A118005B617D /* ServerError.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		9D68CDB528749BAF004A4D46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8FE4B91727549FD1005B617D /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

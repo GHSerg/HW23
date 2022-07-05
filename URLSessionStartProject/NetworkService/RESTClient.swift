@@ -45,7 +45,7 @@ public final class RESTClient {
                     let errorTuple = (error.code, error.localizedDescription)
                     handler(ResponseResult.failure(ServerError.invalidRequest(errorTuple)))
                 }
-                if let data = data {
+                if data != nil {
                     // handle data
                 } else {
                     handler(ResponseResult.failure(ServerError.serverFail))
